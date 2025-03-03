@@ -1,0 +1,14 @@
+img {
+    text-align: center;
+    width: 100px;
+    height: 100px;
+    border-radius: 70%;
+    display: block;
+    margin: 0 auto 20px;
+}
+h1 {
+    text-align: center;
+}
+h2 {
+    color: aqua;
+}
