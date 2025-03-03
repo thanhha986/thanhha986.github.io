@@ -38,3 +38,6 @@ article header p {
 main {
     padding-left: 20px;
 }
+article > p {
+    font-size: 22px;
+}
