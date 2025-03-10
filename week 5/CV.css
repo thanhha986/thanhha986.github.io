@@ -10,14 +10,11 @@ h1 {
     text-align: center;
 }
 h2 {
-    color: aqua;
+    color: rgb(47, 134, 134);
 }
 summary {
     color: blueviolet;
     font-style: strong;
-}
-body {
-    background: rgba(128, 148, 172, 0.89);
 }
 details {
     background: rgba(57, 116, 161, 0.313);
