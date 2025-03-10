@@ -16,3 +16,14 @@ summary {
     color: blueviolet;
     font-style: strong;
 }
+body {
+    background: rgba(128, 148, 172, 0.89);
+}
+details {
+    background: rgba(57, 116, 161, 0.313);
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px soild #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 1);
+}
