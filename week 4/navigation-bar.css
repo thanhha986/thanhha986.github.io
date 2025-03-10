@@ -41,3 +41,8 @@ main {
 article > p {
     font-size: 22px;
 }
+footer {
+    background:black;
+    color:aliceblue;
+    text-align: center;
+}
