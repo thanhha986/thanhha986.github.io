@@ -1,0 +1,9 @@
+.my-list p:nth-child(even) {
+    background: #f9f9f9;
+}
+.my-list p:nth-child(odd) {
+    background: #ff9;
+}
+.my-list p {
+    width: 400px;
+}
