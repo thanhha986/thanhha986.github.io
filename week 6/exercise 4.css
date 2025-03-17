@@ -1,0 +1,48 @@
+body {
+    font-family: Arial, sans-serif;
+    color: #fcfcfc;
+    background-color: #355664;
+    width: 960px;
+    margin: 0 auto;
+}
+h1 {
+    font-size: 50px;
+    padding: 10px 0 0;
+    text-align: center;
+    text-transform: uppercase;
+}
+h2 {
+    font-size: 20px;
+    text-align: right;
+    text-transform: uppercase;
+    border-bottom: 3px solid #416371;
+    padding-bottom: 20px;
+}
+nav {
+    background: #355664;
+    padding: 0 5px;
+}
+nav ul li {
+    display: inline-block;
+}
+nav ul il a {
+    color: #ffffff;
+    display: inline-block;
+    font-size: 30px;
+    margin: 5px 2px;
+    padding: 7px 10px 4px;
+    text-transform: uppercase;
+}
+nav ul li:first-of-type > a {
+    color: #7CB3E9;
+    font-size: 30px;
+    text-transform: lowercase;
+}
+nav ul a[title="sweet tabs"] {
+    color: #8EC45B;
+    font-size: 30px;
+    text-transform: none;
+}
+figure + article {
+    color: #94c258;
+}
