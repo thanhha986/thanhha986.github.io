@@ -1,85 +1,187 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register new account</title>
-    <script src="exercise 2.js"></script>
-</head>
-<body>
-    <h1 style="color: white; background-color: rgb(99, 99, 207); padding: 10px;">
-        REGISTER NEW ACCOUNT
-    </h1>
-    <form>
-        <table>
-            <tr>
-                <td>Username</td>
-                <td><input type="text" id="name"></td>
-            </tr>
-            <tr>
-                <td>Password</td>
-                <td><input type="text" id="Password"></td>
-            </tr>
-            <tr>
-                <td>Confirm password</td>
-                <td><input type="text" id="Confirm password"></td>
-            </tr>
-            <tr>
-                <td>Gender</td>
-                <td>
-                    <input type="radio" id="Gender" value="male">Male
-                    <input type="radio" id="Gender" value="female">Female
-                </td>
-            </tr>
-            <tr>
-                <td>Phone</td>
-                <td><input type="text" id="Phone"></td>
-            </tr>
-            <tr>
-                <td>Email</td>
-                <td><input type="text" id="Email"></td>
-            </tr>
-            <tr>
-                <td>Favorite</td>
-                <td>
-                    <input type="checkbox" value="Music">Music
-                    <input type="checkbox" value="Reading">Reading
-                </td>
-            </tr>
-            <tr>
-                <td>Picture</td>
-                <td><input type="file" id="Picture"></td>
-            </tr>
-             <tr>
-                <td>Description</td>
-                <td><input type="text" id="Description"></td>
-            </tr>
-            <tr>
-                <td>Education Level</td>
-                <td>
-                    <select id="education_level">
-                        <option value="Aptech">Aptech</option>
-                      </select>
-                </td>
-            </tr>
-            <tr>
-                <td>Language</td>
-                <td>
-                    <select id="Language">
-                        <option value="Vitenamese">Vitenamese</option>
-                        <option value="English">English</option>
-                        <option value="French">French</option> 
-                        <option value="Japanese">Japanese</option>      
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <button type="register">Register</button>
-                    <button type="reset">Reset</button>
-                </td>
-            </tr>
-        </table>
-    </form>
-</body>
+    <head>
+        <title>Title</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+        <!-- Bootstrap CSS v5.2.1 -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous"
+        />
+        <style type="text/css">
+            body {
+                background-color: #e8e8e8;
+            }
+            .container-fluid {
+                margin-top: 30px;
+            }
+            .house {
+                background-color: #fff;
+                padding: 20px;
+                float: left;
+                margin-bottom: 20px;
+            }
+            .house .media-body .list-inline {
+                margin-top: 10px;
+            }
+            .house .media-body .span {
+                margin-top: 10px;
+            }
+            @media screen and (min-width: 990px) {
+                .house img {
+                    max-width: 180px;
+                }
+            }
+            @media screen and (max-width:990px) {
+                .container .house p {
+                    display: none;
+                }
+                .container .house .media-body a {
+                    display: none;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <!-- place navbar here -->
+             <div class="container-fluid">
+                <div class="container">
+                    <nav class="navbar navbar-default">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" datta-target="#myNavbar">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand" href="#">Housr Bussiness</a>
+                        </div>
+                        <div class="collapse" id="myNavbar">
+                            <ul class="nav navbar-nav">
+                                <li class="active"><a href="#">Home</a></li>
+                                <li><a href="#">Profile</a></li>
+                                <li><a href="#">Messages</a></li>
+                            </ul>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a href="exercisel.html"><span class="glyphicon glyphicon-user"></span>Sign Up</a></li>
+                                <li><a href="#"><span class="glyphicon glyphicon-user"></span>Login</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+             </div>
+             <div class="row heading">
+                <div class="title col-md-12">
+                    <h1>Milion Dollar Home Listings</h1>
+                    <p>Content</p>
+                </div>
+             </div>
+             <div class="row-content"></div>
+             <div class="col-md-6">
+                <div class="house">
+                    <div class="media">
+                        <div class="pull-left">
+                            <a href="#">
+                                <img src="01.jpg" class="img-responsive media-object">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="meida-heading hidden-xs">Media heading</h4>
+                        <a href="#">$1.975.000</a>
+                        <span class="badge pull-right">609 W Gravers Ln</span>
+                        <ul class="list-inline">
+                            <li>4,820 SqFt</li><li>|</li>
+                            <li>4,820 SqFt</li><li>|</li>
+                            <li>5 Baths</li>
+                        </ul>
+                        <p> Content of media heading</p>
+                    </div>
+                    <div class="house">
+                        <div class="media">
+                            <div class="pull-left">
+                                <a href="#">
+                                    <img src="02.jpg" class="img-responsive media-object">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="meida-heading hidden-xs">Media haeding</h4>
+                            <a href="#">$1.975.000</a>
+                            <span class="badge pull-right">609 W Gravers Ln</span>
+                            <ul class="list-inline">
+                                <li>4,820 SqFt</li><li>|</li>
+                                <li>4,820 SqFt</li><li>|</li>
+                                <li>5 Baths</li>
+                            </ul>
+                            <p> Content of media heading</p>
+                        </div>
+                    </div>
+                </div>
+             </div>
+             <div class="col-md-6">
+                <div class="house">
+                    <div class="media">
+                        <div class="pull-left">
+                            <a href="#">
+                                <img src="04.jpg" class="img-responsive media-object">
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="meida-heading hidden-xs">Media headingg</h4>
+                            <a href="#">$1.975.000</a>
+                            <span class="badge pull-left">609 W Gravers Ln</span>
+                            <ul class="list-inline">
+                                <li>4,820 SqFt</li><li>|</li>
+                                <li>4,820 SqFt</li><li>|</li>
+                                <li>5 Baths</li>
+                            </ul>
+                            <p> Content of media heading</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="house">
+                    <div class="media">
+                        <div class="pull-left">
+                            <a href="#">
+                                <img src="05.jpg" class="img-responsive media-object">
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="meida-heading hidden-xs">Media headingg</h4>
+                            <a href="#">$1.975.000</a>
+                            <span class="badge pull-right">609 W Gravers Ln</span>
+                            <ul class="list-inline">
+                                <li>4,820 SqFt</li><li>|</li>
+                                <li>4,820 SqFt</li><li>|</li>
+                                <li>5 Baths</li>
+                            </ul>
+                         <p> Content of media heading</p>
+                </div>
+             </div>
+        </header>
+        <main></main>
+        <footer>
+            <!-- place footer here -->
+        </footer>
+        <!-- Bootstrap JavaScript Libraries -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous"
+        ></script>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+            integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+            crossorigin="anonymous"
+        ></script>
+    </body>
 </html>
