@@ -4,25 +4,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register new account</title>
-    <script src="register new.account.js"></script>
+    <script>
+        function formValid () {
+    var f = document.frmRegister;
+    var phone_pattern = /^(\(0\d{1,3}\)\d{7})|(0\d{9,10})$/;
+    var email_pattern = /^[a-zA-Z]\W*(\.\w+)*\@\W+(\.\w{2,3})+$/;
+    if(f.txtUsername.value =="") {
+        alert("Username cant't be empty");
+        f.txtUsername.focus();
+        return false;
+    }
+    if(f.txtPassword1.value.length < 6 || f.txtPassword1.value.length > 20) {
+        alert("Password length must be from 6 to 20 characters");
+        f.txtPassword1.focus();
+        return false;
+    }
+    if(f.txtPassword1.value != f.txtPassword2.value) {
+        alert("Password doesn't match");
+        f.txtpassword2.focus();
+        return false;
+    }
+    if(phone_pattern.test(f.txtPhone.value) ==false) {
+        alert("Invalid phone number");
+        f.txtPhone.focus();
+        return false;
+    }
+    if(email_pattern.test(f.txtEmail.value) ==false) {
+        alert("Invalid email address");
+        f.txtEmail.focus();
+        return false;
+    }
+    if(f.chkMusic.checked==false && f.chkReading.checked==false) {
+        alert("You must select at least one favourite");
+        f.chkMusic.focus();
+        return false;
+    }
+    if(f.filePicture.value =="") {
+        alert("You must select your picture");
+        f.filePicture.focus();
+        return false;
+    }
+    if(f.txtDescription.value =="") {
+        alert("You must enter description");
+        f.txtDescription.focus();
+        return false;
+    }
+    alert("All registration information are correct");
+    return true;
+}
+    </script>
 </head>
 <body>
-    <h1 style="color: white; background-color: rgb(99, 99, 207); padding: 10px;">
+    <h1 style="color: white; background-color: rgb(99, 99, 207); padding: 10px; text-align: center;">
         REGISTER NEW ACCOUNT
     </h1>
-    <form>
+    <form name="frmRegister" method="get" onsubmit="return formValid()">
         <table>
             <tr>
                 <td>Username</td>
-                <td><input type="text" id="name"></td>
+                <td><input type="text" id="txtUsername"></td>
             </tr>
             <tr>
                 <td>Password</td>
-                <td><input type="text" id="Password"></td>
+                <td><input type="text" id="txtPassword1"></td>
             </tr>
             <tr>
                 <td>Confirm password</td>
-                <td><input type="text" id="Confirm password"></td>
+                <td><input type="text" id="txtPassword2"></td>
             </tr>
             <tr>
                 <td>Gender</td>
@@ -33,26 +81,26 @@
             </tr>
             <tr>
                 <td>Phone</td>
-                <td><input type="text" id="Phone"></td>
+                <td><input type="text" id="txtPhone"></td>
             </tr>
             <tr>
                 <td>Email</td>
-                <td><input type="text" id="Email"></td>
+                <td><input type="text" id="txtEmail"></td>
             </tr>
             <tr>
                 <td>Favorite</td>
                 <td>
-                    <input type="checkbox" value="Music">Music
-                    <input type="checkbox" value="Reading">Reading
+                    <input type="checkbox" value="ckMusic">Music
+                    <input type="checkbox" value="ckReading">Reading
                 </td>
             </tr>
             <tr>
                 <td>Picture</td>
-                <td><input type="file" id="Picture"></td>
+                <td><input type="file" id="filePicture"></td>
             </tr>
              <tr>
                 <td>Description</td>
-                <td><input type="text" id="Description"></td>
+                <td><input type="text" id="txtDescription"></td>
             </tr>
             <tr>
                 <td>Education Level</td>
@@ -75,7 +123,7 @@
             </tr>
             <tr>
                 <td>
-                    <button type="register">Register</button>
+                    <button type="submit">Register</button>
                     <button type="reset">Reset</button>
                 </td>
             </tr>
