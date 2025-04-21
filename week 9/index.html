@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="#" id ="form_main">
+        <input type="number" id="number1">
+        <br>
+        <button onclick="checkNumber();" on>Check</button>
+        <p id="result"></p>
+    </form>
+    <!-- JavaScript -->
+     <script>
+        function checkNumber() {
+            var x = parseInt(document.getElementById("number1").value);
+            if (x % 2 === 0) {
+                var result = document.getElementById("result");
+                result.innerHTML = x + " is Even";
+            } else {
+                var result = document.getElementById("result");
+                result.innerHTML = x + " is Odd";
+            }
+        }
+     </script>
+</body>
+</html>
