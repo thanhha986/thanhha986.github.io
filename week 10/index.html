@@ -9,7 +9,8 @@
     <form action="#" id ="form_main">
         <input type="number" id="number1">
         <br>
-        <button onclick="checkNumber();" on>Check</button>
+        <button onclick="checkNumber();" id="check_button">Check</button>
+        <button onclick="resetNew();" style="display: none;" id="reset_button">Reset</button>
         <p id="result"></p>
     </form>
     <!-- JavaScript -->
@@ -23,7 +24,14 @@
                 var result = document.getElementById("result");
                 result.innerHTML = x + " is Odd";
             }
+            document.getElementById("reset_button").style.display = "block";
         }
+        function resetNew() {
+            document.getElementById("number1").value = "";
+            document.getElementById("result").innerHTML = "";
+            document.getElementById("number1").focus();
+        }
+        
      </script>
 </body>
 </html>
