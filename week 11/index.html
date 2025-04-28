@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="menu">
+        <ul>
+            <li><a href="#"><img src="z6495638235401_eed54aed4ab91d18442e8838a5e284d5.jpg" 
+                alt="In case the imgage is not found, this is an anh">
+            </a></li>
+        </ul>
+    </div>
+        <button onclick="toggleMenu()">Ẩn/Hiện</button>
+        <script>
+            function toggleMenu() {
+                var menu = document.querySelector('.menu ul');
+                if (menu.style.display === 'none') {
+                    menu.style.display = 'block';
+                } else {
+                    menu.style.display = 'none';
+                }
+        }
+        </script>
+</body>
+</html>

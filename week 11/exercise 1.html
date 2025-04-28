@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="menu">
+        <ul>
+            <li><a href="#">Họ Tên: Trương Thị Thanh Hà</a></li>
+            <li><a href="#">Mã số sinh viên: 24070338</a></li>
+        </ul>
+    </div>
+    <button onclick="toggleMenu()">Ẩn/Hiện</button>
+    <script>
+        function toggleMenu() {
+            var menu = document.querySelector('.menu ul');
+            if (menu.style.display === 'none') {
+                menu.style.display = 'block';
+            } else {
+                menu.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
