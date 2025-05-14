@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Trương Thị Thanh Hà 24070338</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+    }
+    h2 {
+      color: #2c3e50;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 12px;
+      border: 1px solid #ccc;
+      text-align: left;
+    }
+    th {
+      background-color: #f4f4f4;
+    }
+    tr.completed {
+      background-color: #dff0d8;
+    }
+    tr:hover {
+        background-color: #604848;
+    }
+    h3 {
+      text-align: center;
+      color: #2c3e50;
+    }
+    .accordion-item {
+      border-bottom: 1px solid #ccc;
+      padding: 10px 0;
+    }
+    .accordion-question {
+      display: flex;
+      justify-content: space-between;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 1.1em;
+      transition: color 0.3s;
+    }
+    .accordion-question:hover {
+      color: #007BFF;
+    }
+
+    .accordion-icon {
+      font-size: 1.2em;
+    }
+
+    .accordion-answer {
+      max-height: 0;
+      overflow: hidden;
+      padding: 0 0;
+    }
+
+    .accordion-answer.open {
+      padding: 10px 0;
+    }
+
+    .accordion-answer-content {
+      margin: 0;
+      color: #333;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+    }
+
+    .total {
+      font-weight: bold;
+      margin-top: 15px;
+      font-size: 1.2em;
+      color: #007BFF;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 1em;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .error {
+      color: red;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+    <!--Câu 1:-->
+  <table id="todoTable">
+    <h2>To-do-list</h2> 
+    <thead>
+      <tr>
+        <th>Hoàn thành &trade;</th> 
+        <th>Công việc &copy;</th> 
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><input type="checkbox" onchange="toggleComplete"></td>
+        <td>Dậy sớm - </td> 
+      </tr>
+      <tr>
+        <td><input type="checkbox" onchange="toggleComplete"></td>
+        <td>Tập thể dục - </td> 
+      </tr>
+      <tr>
+        <td><input type="checkbox" onchange="toggleComplete"></td>
+        <td>Đọc sách - </td> 
+      </tr>
+      <tr>
+        <td><input type="checkbox" onchange="toggleComplete"></td>
+        <td>Làm bài tập - </td> 
+      </tr>
+      <tr>
+        <td><input type="checkbox" onchange="toggleComplete"></td>
+        <td>Chuẩn bị bữa tối - </td> 
+      </tr>
+      <!--Câu 2-->
+      <h3> Câu hỏi thường gặp</h3>
+  <div class="accordion-item">
+    <div class="accordion-question" onclick="toggleAccordion(this)">
+      <span>1. Sáng nay bạn ăn gì? </span>
+      <span class="accordion-icon">+</span>
+    </div>
+    <div class="accordion-answer">
+      <p class="accordion-answer-content">Tôi ăn một cái bánh mỳ và uống sữa.</p>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <div class="accordion-question" onclick="toggleAccordion(this)">
+      <span>2. Mai bạn đi chơi với tôi nhé?</span>
+      <span class="accordion-icon">+</span>
+    </div>
+    <div class="accordion-answer">
+      <p class="accordion-answer-content"> Ok. Được thui</p>
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <div class="accordion-question" onclick="toggleAccordion(this)">
+      <span>3. Bạn có muốn đi xem phim không?</span>
+      <span class="accordion-icon">+</span>
+    </div>
+    <div class="accordion-answer">
+      <p class="accordion-answer-content">Xin lỗi, tôi bận mất rồi.</p>
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <div class="accordion-question" onclick="toggleAccordion(this)">
+      <span>4.Bạn đang làm gì vậy?</span>
+      <span class="accordion-icon">+</span>
+    </div>
+    <div class="accordion-answer">
+      <p class="accordion-answer-content">Tôi đang xem phim và lướt điện thoại.</p>
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <div class="accordion-question" onclick="toggleAccordion(this)">
+      <span>5. Bạn có thích đi công viên chơi không?</span>
+      <span class="accordion-icon">+</span>
+    </div>
+    <div class="accordion-answer">
+      <p class="accordion-answer-content">Có chứ. Mai chúng ta đi nha</p>
+    </div>
+  </div>
+  <!--cÂU 3-->
+  <h4>🎬 Đặt Vé Xem Phim</h4>
+<form id="bookingForm" onsubmit="return validateForm()">
+
+  <!-- Thông tin phim -->
+  <div class="form-section">
+    <h5>Thông tin phim</h5>
+    <div class="form-group">
+      <label for="movie">Tên phim:</label>
+      <select id="movie" required>
+        <option value="">-- Chọn phim --</option>
+        <option value="avengers">Mùi cỏ cháy</option>
+        <option value="batman">Doremon</option>
+        <option value="minions">Nhà tiên nữ</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="date">Ngày xem:</label>
+      <input type="date" id="date" required>
+      <div id="dateError" class="error"></div>
+    </div>
+  </div>
+  <!-- Chi tiết vé -->
+  <div class="form-section">
+    <h5>Chi tiết vé</h5>
+
+    <div class="form-group">
+      <label for="quantity">Số lượng vé (1-10):</label>
+      <input type="number" id="quantity" min="1" max="10" required>
+      <div id="quantityError" class="error"></div>
+    </div>
+    <div class="form-group">
+      <label for="ticketType">Loại vé:</label>
+      <select id="ticketType" required>
+        <option value="normal">Thường - 70.000đ</option>
+        <option value="vip">VIP - 120.000đ</option>
+        <option value="student">Học sinh/Sinh viên - 50.000đ</option>
+      </select>
+    </div>
+    <div class="total">Tổng tiền: <span id="totalPrice">0</span> đ</div>
+  </div>
+
+  <!-- Thông tin liên hệ -->
+  <div class="form-section">
+    <h5>Thông tin liên hệ</h5>
+
+    <div class="form-group">
+      <label for="name">Họ và tên:</label>
+      <input type="text" id="name">
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email">
+    </div>
+
+    <div class="form-group">
+      <label for="phone">Số điện thoại:</label>
+      <input type="tel" id="phone">
+    </div>
+  </div>
+
+  <button type="submit">Đặt vé</button>
+</form>
+
+<!--Javascript-->
+  <script>
+    function toggleAccordion(element) {
+      const answer = element.nextElementSibling;
+      const icon = element.querySelector(".accordion-icon");
+
+      if (answer.style.maxHeight) {
+        answer.style.maxHeight = null;
+        answer.classList.remove("open");
+        icon.textContent = "+";
+      } else {
+        // Close all others
+        document.querySelectorAll(".accordion-answer").forEach(el => {
+          el.style.maxHeight = null;
+          el.classList.remove("open");
+        });
+        document.querySelectorAll(".accordion-icon").forEach(i => {
+          i.textContent = "+";
+        });
+
+        // Open current
+        answer.style.maxHeight = answer.scrollHeight + "px";
+        answer.classList.add("open");
+        icon.textContent = "-";
+      }
+    }
+     const quantityInput = document.getElementById("quantity");
+    const ticketTypeSelect = document.getElementById("ticketType");
+    const totalPriceEl = document.getElementById("totalPrice");
+
+    function updateTotal() {
+      const quantity = parseInt(quantityInput.value) || 0;
+      const selectedOption = ticketTypeSelect.options[ticketTypeSelect.selectedIndex];
+      const price = parseInt(selectedOption.dataset.price) || 0;
+      totalPriceEl.textContent = quantity * price;
+    }
+
+    ticketTypeSelect.addEventListener("change", updateTotal);
+    quantityInput.addEventListener("input", updateTotal);
+
+    function validateForm() {
+      let valid = true;
+
+      // Validate date
+      const dateInput = document.getElementById("date");
+      const dateError = document.getElementById("dateError");
+      const selectedDate = new Date(dateInput.value);
+      const today = new Date();
+      today.setHours(0,0,0,0);
+      if (selectedDate <= today) {
+        dateError.textContent = "Vui lòng chọn ngày trong tương lai.";
+        valid = false;
+      } else {
+        dateError.textContent = "";
+      }
+
+      // Validate quantity
+      const quantity = parseInt(quantityInput.value);
+      const quantityError = document.getElementById("quantityError");
+      if (quantity < 1 || quantity > 10) {
+        quantityError.textContent = "Số lượng vé phải từ 1 đến 10.";
+        valid = false;
+      } else {
+        quantityError.textContent = "";
+      }
+
+      return valid;
+      
+    }
+    
+  </script>
+
+    </body>
+    </html>
+

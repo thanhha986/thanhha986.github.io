@@ -2,44 +2,42 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Ôn tập ISV2017</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
     <style>
-        table {
-            border-collapse: collapse;
-            width: 80%;
-            margin: 20px auto;
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-        }
-        tr:hover {
-            background-color: #f5f5f5;
-        }
         nav {
-            background-color: #333;
+            background-color: gray;
             padding: 15px;
             text-align: center;
         }
         nav a {
-            color: white;
+            text-align: center;
             text-decoration: none;
-            margin: 0 10px;
+            margin:2px 10px ;
         }
         nav a:hover {
-            color: #4CAF50;
+            color: brown;
         }
-        
-        /* Form cơ bản */
+        table {
+            border-collapse: collapse;
+            width:85%;
+        }
+        th,td {
+            border: 1px solid #ddd;
+            text-align: left;
+            padding: 10px;
+        }
+        tr:hover {
+            background-color: #f5f5f5;
+        }
         .form-container {
-            width: 60%;
+            width:80%;
             margin: 20px auto;
-            padding: 20px;
-            border: 1px solid #ccc;
+            padding:20px;
+            border: 1px solid #000;
         }
-        input[type="text"], 
-        input[type="email"], 
+        input[type="text"],
+        input[type="email"],
         textarea {
             width: 100%;
             padding: 8px;
@@ -48,70 +46,66 @@
     </style>
 </head>
 <body>
-
-    <!-- Phần 1: Menu điều hướng -->
-    <nav id="mainNav">
+    <nav id="menu">
         <a href="#">Trang chủ</a> -
-        <a href="#">Sách ©</a> -
+        <a href="#">Sách &copy;</a> -
         <a href="#">Tác giả &trade;</a> -
         <a href="#">Liên hệ</a>
     </nav>
     <button onclick="toggleMenu()">Ẩn/Hiện Menu</button>
-
-    <!-- Phần 2: Bảng và nút tương tác -->
-    <h2>Bảng linh kiện máy tính ©</h2>
+    <h2>Bảng linh kiện máy tính &copy;</h2>
     <table id="componentTable">
-        <tbody><tr>
-            <th>Tên linh kiện</th>
-            <th>Giá (VND)</th>
-            <th>Đánh giá &star;</th>
-        </tr>
-        <tr>
-            <td>CPU Intel™ Core i5</td>
-            <td>5000000</td>
-            <td>4.5/5</td>
-        </tr>
-        <tr>
-            <td>RAM DDR4 8GB</td>
-            <td>800000</td>
-            <td>4.0/5</td>
-        </tr>
-        <tr>
-            <td>Ổ cứng SSD 256GB</td>
-            <td>1200000</td>
-            <td>4.8/5</td>
-        </tr>
-    </tbody></table>
-    <button onclick="changeColor()">Đổi màu chữ</button>
+        <thead>
+            <tr>
+                <th>Tên linh kiện</th>
+                <th>Giá (VNĐ)</th>
+                <th>Đánh giá &star;</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>CPU Intel &trade; Core i5</td>
+                <td>5000000</td>
+                <td>4.5/5</td>
+            </tr>
+            <tr>
+                <td>RAM DDR4 GB</td>
+                <td>800000</td>
+                <td>4.0/5</td>
+            </tr>
+            <tr>
+                <td>Ổ cứng SSD 256GB</td>
+                <td>1200000</td>
+                <td>4.8/5</td>
+            </tr>
+        </tbody>
+    </table>
+    <button onclick="doimauchu()">Đổi màu chữ</button>
     <button onclick="sortTable()">Sắp xếp theo giá</button>
-
-    <!-- Phần 3: Form liên hệ -->
+    <!--Phaan 3: Form-->
     <div class="form-container">
         <h3>Biểu mẫu liên hệ</h3>
         <form onsubmit="return validateForm()">
-            <label>Họ tên:</label>
+            <lable>Họ tên:</lable>
             <input type="text" id="name">
-            
             <label>Email:</label>
             <input type="email" id="email">
-            
             <label>Tin nhắn:</label>
             <textarea id="message"></textarea>
-
-            <input type="submit" value="Gửi">
+        <button type="submit">Gửi</button>
         </form>
     </div>
-
     <script>
-        // JavaScript cơ bản
-        let isRed = false;
-        
-        function changeColor() {
+        function toggleMenu() {
+            const menu = document.getElementById("menu")
+            menu.style.display = menu.style.display === "none" ? "block" : "none";
+        }
+        let isRed = false
+        function doimauchu() {
             const table = document.getElementById("componentTable");
             table.style.color = isRed ? "black" : "red";
             isRed = !isRed;
         }
-
         function sortTable() {
             const table = document.getElementById("componentTable");
             const rows = Array.from(table.rows).slice(1);
@@ -122,22 +116,16 @@
             });
             rows.forEach(row => table.appendChild(row));
         }
-
-        function toggleMenu() {
-            const nav = document.getElementById("mainNav");
-            nav.style.display = nav.style.display === "none" ? "block" : "none";
-        }
-
         function validateForm() {
             const name = document.getElementById("name").value;
             const email = document.getElementById("email").value;
             const message = document.getElementById("message").value;
 
             if (name === "" || email === "" || message === "") {
-                alert("Vui lòng điền đầy đủ thông tin!");
+                alert("Vui lòng điền đầy đủ thông tin.");
                 return false;
             }
-            alert("Gửi thành công!");
+            alert("Cảm ơn bạn đã gửi thông tin!");
             return true;
         }
     </script>
